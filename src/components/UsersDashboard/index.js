@@ -3,6 +3,8 @@ import TableUsers from "./TableUsers";
 import axios from "axios";
 import { Button } from "antd";
 import ModalFormUsers from "./ModalFormUsers";
+import { ButtonCreate, Headbar, SearchBox } from "./TableUsers/styles";
+import Search from "antd/es/input/Search";
 
 const DEFAULT_USER = {id:"",name:"", email:"", phone:"", status:"", avatar:""}
 
@@ -66,10 +68,11 @@ const UsersDashboard = () => {
 
     return(
         <div>
-            <div>
-                <Button onClick={onCreate}>Add User</Button>
+            <Headbar>
+                <ButtonCreate onClick={onCreate}>Create User</ButtonCreate>
+                <SearchBox />
                 <ModalFormUsers open={open} onSubmit={onSubmit} onCancel={onCancel} formData={formData} loading={formLoading}/>
-            </div>
+            </Headbar>
             <TableUsers users={users} onDelete={onDelete} onEdit={onEdit} loading={tableLoading}/>
         </div>
     )

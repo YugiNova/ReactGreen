@@ -1,5 +1,6 @@
 import { UserOutlined,ExclamationCircleFilled } from '@ant-design/icons';
 import { Button, Table, Modal } from "antd";
+import { TableCustom, Avatar, ButtonAction } from './styles';
 const {confirm} = Modal;
 
 
@@ -49,7 +50,7 @@ const TableUsers = ({users, onDelete, onEdit, loading}) => {
             key: 'avatar',
             render: (_,item) =>{
                 return(
-                    <img src={item.avatar}/>
+                    <Avatar src={item.avatar}/>
                 )
             }
         },
@@ -60,8 +61,8 @@ const TableUsers = ({users, onDelete, onEdit, loading}) => {
             render: (_,item) =>{
                 return(
                     <div>
-                        <Button onClick={()=>{onEdit(item.id)}}>Edit</Button>
-                        <Button onClick={()=>{showConfirm(item.id)}}>Delete</Button>
+                        <ButtonAction act={"edit"} onClick={()=>{onEdit(item.id)}}>Edit</ButtonAction>
+                        <ButtonAction act={"delete"} onClick={()=>{showConfirm(item.id)}}>Delete</ButtonAction>
                     </div>
                 )
             }
@@ -69,7 +70,7 @@ const TableUsers = ({users, onDelete, onEdit, loading}) => {
     ]
 
     return(
-        <Table columns={columns} dataSource={users} loading={loading}/>
+        <TableCustom columns={columns} dataSource={users} loading={loading}/>
     )
 }
 
