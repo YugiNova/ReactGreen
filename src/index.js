@@ -8,6 +8,7 @@ import PublicRoute from './routes/PublicRoute';
 import Login from './pages/Login';
 import Users from './pages/Users';
 import PrivateRoute from './routes/PrivateRoute';
+import Products from './pages/Products';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/users",
     element: <PrivateRoute page={<Users/>}/>
+  },
+  {
+    path: "/products",
+    element: <PrivateRoute page={<Products/>}/>
   }
 ])
 

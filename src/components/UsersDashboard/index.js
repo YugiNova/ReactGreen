@@ -3,17 +3,20 @@ import TableUsers from "./TableUsers";
 import axios from "axios";
 import { Button } from "antd";
 import ModalFormUsers from "./ModalFormUsers";
-import { ButtonCreate, Headbar, SearchBox } from "./TableUsers/styles";
-import Search from "antd/es/input/Search";
+import { ButtonCreate, Headbar} from "./TableUsers/styles";
+import SearchBox from "../SearchBox";
+import { useLocation } from "react-router-dom";
 
 const DEFAULT_USER = {id:"",name:"", email:"", phone:"", status:"", avatar:""}
 
 const UsersDashboard = () => {
+    const location = useLocation();
     const [users, setUsers] = useState([]);
     const [formData, setFormData] = useState(DEFAULT_USER);
     const [open, setOpen] = useState(false);
     const [tableLoading, setTableLoading] = useState(false);
     const [formLoading, setFormLoading] = useState(false);
+    const [keyword,setKeyword] = useState("");
 
     const onCancel = () => {
         setOpen(false);
@@ -26,11 +29,16 @@ const UsersDashboard = () => {
 
     useEffect(()=>{
         fetchData();
-    },[])
+    },[location])
 
     const fetchData = () => {
+        const searchParams = new URLSearchParams(location.search);
+        const baseUrl = "https://6401dc9d0a2a1afebef3c167.mockapi.io/users";
+        const keyword = searchParams.has('keyword')?searchParams.get('keyword'): "";
+        const page = searchParams.has('page')?searchParams.get('page'): "1";
+        const limit = searchParams.has('limit')?searchParams.get('limit'): "500";
         setTableLoading(true)
-        axios.get("https://6401dc9d0a2a1afebef3c167.mockapi.io/users").then(res => {
+        axios.get(`${baseUrl}?keyword=${keyword}&page=${page}&limit=${limit}`).then(res => {
             setUsers(res.data);
             setTableLoading(false);
         })
@@ -65,12 +73,15 @@ const UsersDashboard = () => {
         })
     }
 
+    const onChange = (e) => {
+
+    }
 
     return(
         <div>
             <Headbar>
                 <ButtonCreate onClick={onCreate}>Create User</ButtonCreate>
-                <SearchBox />
+                <SearchBox/>
                 <ModalFormUsers open={open} onSubmit={onSubmit} onCancel={onCancel} formData={formData} loading={formLoading}/>
             </Headbar>
             <TableUsers users={users} onDelete={onDelete} onEdit={onEdit} loading={tableLoading}/>

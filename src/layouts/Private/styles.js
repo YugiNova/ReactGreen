@@ -5,6 +5,8 @@ export const Layout = styled.div`
   grid-template-columns: 15rem 1fr;
   gap: 1rem;
   padding: 1rem;
+  max-height: 100vh;
+  overflow-y: hidden;
 `;
 
 export const Sidebar = styled.div`
@@ -65,8 +67,8 @@ export const Logo = styled.a`
 background: -webkit-linear-gradient(to right, #A83279, #D38312) !important;  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #A83279, #D38312) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-  -webkit-background-clip: text !important;
-  color: transparent !important;
+  // -webkit-background-clip: text !important;
+  // color: transparent !important;
 
 `
 

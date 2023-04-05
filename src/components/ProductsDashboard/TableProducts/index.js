@@ -1,14 +1,10 @@
 import { UserOutlined,ExclamationCircleFilled } from '@ant-design/icons';
 import { Button, Table, Modal } from "antd";
 import { TableCustom, Avatar, ButtonAction } from './styles';
-import { useLocation, useNavigate } from 'react-router-dom';
 const {confirm} = Modal;
 
 
-const TableUsers = ({users, onDelete, onEdit, loading}) => {
-    const location = useLocation();
-    const navigate = useNavigate();
-
+const TableProducts = ({products, onDelete, onEdit, loading}) => {
     const showConfirm = (id) => {
         confirm({
           title: 'Bạn có muốn xóa cuốn sách này ?',
@@ -29,32 +25,27 @@ const TableUsers = ({users, onDelete, onEdit, loading}) => {
             key: 'name'
         },
         {
-            title: 'Email',
-            dataIndex: 'email',
-            key: 'email'
+            title: 'Code',
+            dataIndex: 'code',
+            key: 'code'
         },
         {
-            title: 'Phone',
-            dataIndex: 'phone',
-            key: 'phone'
+            title: 'Price',
+            dataIndex: 'price',
+            key: 'price'
         },
         {
-            title: 'Status',
-            dataIndex: 'status',
-            key: 'status',
-            render: (text,item) =>{
-                return(
-                    <p>{text.toString() === "true"?"Active":"Inactive"}</p>
-                )
-            }
+            title: 'Description',
+            dataIndex: 'description',
+            key: 'description',
         },
         {
-            title: 'Avatar',
-            dataIndex: 'avatar',
-            key: 'avatar',
+            title: 'Thumbnail',
+            dataIndex: 'thumbnail',
+            key: 'thumbnail',
             render: (_,item) =>{
                 return(
-                    <Avatar src={item.avatar}/>
+                    <Avatar src={item.thumbnail}/>
                 )
             }
         },
@@ -74,19 +65,10 @@ const TableUsers = ({users, onDelete, onEdit, loading}) => {
     ]
 
     return(
-        <TableCustom 
-            columns={columns} 
-            dataSource={users} 
-            loading={loading} 
-            onChange={(pagination) => {
-                const searchParams = new URLSearchParams(location.search);
-                searchParams.set("page",pagination.current);
-                searchParams.set("limit",pagination.pageSize);
-
-                navigate(`${location.pathname}?${searchParams.toString()}`);
-                console.log(location)
-            }}/>
+        <TableCustom columns={columns} dataSource={products} loading={loading} scroll={{
+            y: 800, x:1300
+          }}/>
     )
 }
 
-export default TableUsers;
+export default TableProducts;

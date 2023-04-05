@@ -9,7 +9,7 @@ const PrivateLayout = ({ children, title }) => {
       <Sidebar>
         <Logo>Dashboard</Logo>
         <Link to="/users">Users</Link>
-        <Link to="/users">Products</Link>
+        <Link to="/products">Products</Link>
       </Sidebar>
       <Main>
         <Header>
