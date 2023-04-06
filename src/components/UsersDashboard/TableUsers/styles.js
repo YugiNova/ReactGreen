@@ -37,6 +37,10 @@ export const SearchBox = styled(Search)`
 export const TableCustom = styled(Table)`
   margin-top: 1rem;
 
+  ::-webkit-scrollbar {
+    width: 0px;
+  } 
+
   .ant-table {
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);

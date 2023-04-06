@@ -66,7 +66,7 @@ const TableProducts = ({products, onDelete, onEdit, loading}) => {
 
     return(
         <TableCustom columns={columns} dataSource={products} loading={loading} scroll={{
-            y: 800, x:1300
+            y: 430
           }}/>
     )
 }

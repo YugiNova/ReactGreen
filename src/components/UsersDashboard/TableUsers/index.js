@@ -78,6 +78,7 @@ const TableUsers = ({users, onDelete, onEdit, loading}) => {
             columns={columns} 
             dataSource={users} 
             loading={loading} 
+            scroll={{y: 430}}
             onChange={(pagination) => {
                 const searchParams = new URLSearchParams(location.search);
                 searchParams.set("page",pagination.current);
@@ -85,7 +86,7 @@ const TableUsers = ({users, onDelete, onEdit, loading}) => {
 
                 navigate(`${location.pathname}?${searchParams.toString()}`);
                 console.log(location)
-            }}/>
+            }}/>            
     )
 }
 
