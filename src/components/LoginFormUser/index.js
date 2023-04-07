@@ -12,7 +12,7 @@ const LoginFormUser = () => {
         const data = await form.validateFields();
         if(data.username === "admin" && data.password === "admin123"){
             localStorage.setItem("token",data.username + " loged in");
-            navigate("/users")
+            navigate("/ReactGreen/users")
         }
         else{
             message.error("Tên người dùng hoặc mật khẩu không đúng");

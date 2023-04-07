@@ -8,7 +8,7 @@ const PrivateRoute = ({page}) => {
 
     useEffect(() => {
         if(!token){
-            navigate("/");
+            navigate("/ReactGreen/");
         }
     },[])
 

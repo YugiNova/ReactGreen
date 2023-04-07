@@ -1,4 +1,5 @@
 import { Button } from "antd";
+import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 export const Layout = styled.div`
@@ -21,6 +22,12 @@ export const Layout = styled.div`
     grid-template-columns: 50% 50%;
     transform: translateX(-50%);
     overflow-x: hidden;
+    overflow-y: auto;
+
+    &.active{
+      grid-template-columns: 50% 50%;
+      transform: translateX(0);
+  }
   }
 `;
 
@@ -40,7 +47,10 @@ export const Sidebar = styled.div`
   margin-right: 1rem;
 
 
-  a {
+
+`;
+
+export const MenuItem = styled(NavLink)`
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);
     background-color: rgba(17, 25, 40, 0.73);
@@ -63,21 +73,34 @@ export const Sidebar = styled.div`
       margin-right: 20px;
     }
 
-    :hover {
-      background: #e1eec3; /* fallback for old browsers */
+    &.active{
+      background: #e1eec3; 
       background: -webkit-linear-gradient(
         to right,
         #f05053,
         #e1eec3
-      ); /* Chrome 10-25, Safari 5.1-6 */
+      ); 
       background: linear-gradient(
         to right,
         #f05053,
         #e1eec3
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      ); 
     }
-  }
-`;
+
+    :hover {
+      background: #e1eec3;
+      background: -webkit-linear-gradient(
+        to right,
+        #f05053,
+        #e1eec3
+      );
+      background: linear-gradient(
+        to right,
+        #f05053,
+        #e1eec3
+      );
+    }
+`
 
 export const Logo = styled.a`
   font-size: 2rem !important;
@@ -88,6 +111,9 @@ export const Logo = styled.a`
   border-radius: 0px  !important;
   text-align: center !important;
   justify-content:center !important;
+  width: 100%;
+  padding: 0.5rem;
+  color: white;
 
   background: #D38312 !important;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #A83279, #D38312) !important;  /* Chrome 10-25, Safari 5.1-6 */

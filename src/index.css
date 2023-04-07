@@ -2,6 +2,7 @@
   box-sizing: border-box;
   text-decoration: none;
 
+
 }
 
 body {
@@ -18,12 +19,20 @@ body {
   background: #FEAC5E;
 background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
 background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
-overflow-x: hidden;
+
 
 
 }  
-
+#root{
+  overflow-x: hidden;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media screen and (max-width: 600px) {
+  *{
+    font-size: 10px;
+  }
 }

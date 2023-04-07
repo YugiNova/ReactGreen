@@ -12,15 +12,15 @@ import Products from './pages/Products';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ReactGreen/",
     element: <PublicRoute page={<Login/>}/>
   },
   {
-    path: "/users",
+    path: "/ReactGreen/users",
     element: <PrivateRoute page={<Users/>}/>
   },
   {
-    path: "/products",
+    path: "/ReactGreen/products",
     element: <PrivateRoute page={<Products/>}/>
   }
 ])
@@ -28,6 +28,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <RouterProvider router={router}/>
+//   <React.StrictMode>
+//   <App />
+// </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

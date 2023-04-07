@@ -8,7 +8,7 @@ const AuthUser = () => {
 
     const logout = () => {
         localStorage.removeItem('token')
-        navigate(`/`)
+        navigate(`/ReactGreen/`)
     }
 
 

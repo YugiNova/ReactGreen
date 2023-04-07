@@ -8,7 +8,7 @@ const PublicRoute = ({page}) => {
 
     useEffect(()=>{
         if(token){
-            navigate("/users");
+            navigate("/ReactGreen/users");
         }
     },[])
 

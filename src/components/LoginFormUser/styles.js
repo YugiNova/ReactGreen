@@ -17,6 +17,12 @@ export const LoginWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width:600px){
+    font-size: 16px;
+    width: 80vw;
+    height: 60vh;
+  }
 `;
 
 export const Title = styled.h2`
@@ -32,6 +38,10 @@ export const Title = styled.h2`
   background: linear-gradient(to right bottom, #f7797d, #fbd786, #c6ffdd);
   -webkit-background-clip: text;
   color: transparent;
+
+  @media screen and (max-width:600px){
+    font-size: 4rem;
+  }
 `;
 export const FormLogin = styled(Form)`
   background: transparent;
@@ -48,6 +58,10 @@ export const LabelCustom = styled.h3`
   background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
   -webkit-background-clip: text;
   color: transparent;
+
+  @media screen and (max-width:600px){
+    font-size: 1.5rem;
+  }
 `;
 
 export const InputCustom = styled(Input)`
@@ -114,6 +128,11 @@ export const ButtonLogin = styled(Button)`
     color: transparent !important;
     border-image-slice: 1;
     border-image-source: linear-gradient(to right bottom, #6a5af9, #f62682);
+  }
+
+  @media screen and (max-width:600px){
+    font-size: 1rem;
+    padding:1rem 2.5rem;
   }
 `;
 
