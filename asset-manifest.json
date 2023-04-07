@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/yuginova.github.io/ReactGreen/static/css/main.707d3fa6.css",
-    "main.js": "/yuginova.github.io/ReactGreen/static/js/main.4a22dce8.js",
-    "static/js/787.f055211e.chunk.js": "/yuginova.github.io/ReactGreen/static/js/787.f055211e.chunk.js",
-    "static/media/logo.svg": "/yuginova.github.io/ReactGreen/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/yuginova.github.io/ReactGreen/index.html",
-    "main.707d3fa6.css.map": "/yuginova.github.io/ReactGreen/static/css/main.707d3fa6.css.map",
-    "main.4a22dce8.js.map": "/yuginova.github.io/ReactGreen/static/js/main.4a22dce8.js.map",
-    "787.f055211e.chunk.js.map": "/yuginova.github.io/ReactGreen/static/js/787.f055211e.chunk.js.map"
+    "main.css": "/ReactGreen/static/css/main.707d3fa6.css",
+    "main.js": "/ReactGreen/static/js/main.af4ea58e.js",
+    "static/js/787.f055211e.chunk.js": "/ReactGreen/static/js/787.f055211e.chunk.js",
+    "static/media/logo.svg": "/ReactGreen/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/ReactGreen/index.html",
+    "main.707d3fa6.css.map": "/ReactGreen/static/css/main.707d3fa6.css.map",
+    "main.af4ea58e.js.map": "/ReactGreen/static/js/main.af4ea58e.js.map",
+    "787.f055211e.chunk.js.map": "/ReactGreen/static/js/787.f055211e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.707d3fa6.css",
-    "static/js/main.4a22dce8.js"
+    "static/js/main.af4ea58e.js"
   ]
 }
